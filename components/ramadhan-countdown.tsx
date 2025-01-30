@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useRamadhanCountdown } from "@/hooks/useRamadhanCountdown";
+import { ThemeToggle } from "./theme.toggle";
 
 export function RamadhanCountdown() {
   const [mounted, setMounted] = useState(false);
@@ -25,8 +26,11 @@ export function RamadhanCountdown() {
   if (!timeRemaining) {
     return (
       <Card className="w-full max-w-md mx-auto">
-        <CardHeader>
-          <CardTitle className="text-center">Ramadhan Mubarak</CardTitle>
+        <CardHeader className="flex flex-row items-center justify-between">
+          <CardTitle className="text-center flex-grow">
+            Ramadhan Mubarak
+          </CardTitle>
+          <ThemeToggle />
         </CardHeader>
         <CardContent>
           <p className="text-center">
@@ -55,10 +59,11 @@ export function RamadhanCountdown() {
 
   return (
     <Card className="w-full max-w-md mx-auto">
-      <CardHeader>
-        <CardTitle className="text-center">
+      <CardHeader className="flex flex-row items-center justify-between">
+        <CardTitle className="text-center flex-grow">
           Hitung Mundur Menuju Ramadhan
         </CardTitle>
+        <ThemeToggle />
       </CardHeader>
       <CardContent>
         <div className="text-center mb-4">
