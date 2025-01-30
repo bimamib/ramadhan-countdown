@@ -57,7 +57,7 @@ export function RamadhanCountdown() {
 
   if (!timeRemaining) {
     return (
-      <Card className="w-full max-w-md mx-auto">
+      <Card className="w-full max-w-lg mx-auto">
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-center flex-grow">
             Ramadhan Mubarak!
@@ -92,7 +92,7 @@ export function RamadhanCountdown() {
           <p className="text-lg font-semibold mb-1">Perkiraan awal Ramadhan:</p>
           <p className="text-md">{formatDate(targetDate)}</p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 text-center">
           {[
             { label: "Hari", value: days },
             { label: "Jam", value: hours },
@@ -101,9 +101,9 @@ export function RamadhanCountdown() {
           ].map(({ label, value }) => (
             <div
               key={label}
-              className="flex flex-col items-center p-2 bg-secondary rounded-lg"
+              className="flex flex-col items-center justify-center p-2 bg-secondary rounded-lg h-24 sm:h-28"
             >
-              <div className="text-3xl sm:text-4xl font-bold">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold truncate w-full">
                 {value.toString().padStart(2, "0")}
               </div>
               <div className="text-xs sm:text-sm uppercase mt-1">{label}</div>
