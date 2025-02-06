@@ -10,23 +10,30 @@ import {
 } from "./ui/card";
 import { useRamadhanCountdown } from "@/hooks/useRamadhanCountdown";
 import { ThemeToggle } from "./theme.toggle";
+import { CountdownSkeleton } from "./countdown-skeleton";
 
 export function RamadhanCountdown() {
   const [mounted, setMounted] = useState(false);
-  const [currentTime, setCurrentTime] = useState(new Date());
+  const [currentTime, setCurrentTime] = useState(() => new Date());
   const timeRemaining = useRamadhanCountdown(currentTime);
 
   useEffect(() => {
-    setMounted(true);
-    const timer = setInterval(() => {
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 1000); // Menampilkan skeleton selama 1 detik untuk demonstrasi
+
+    const intervalTimer = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
 
-    return () => clearInterval(timer);
+    return () => {
+      clearTimeout(timer);
+      clearInterval(intervalTimer);
+    };
   }, []);
 
   if (!mounted) {
-    return null;
+    return <CountdownSkeleton />;
   }
 
   const formatDate = (date: Date) => {
