@@ -8,7 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export function CountdownSkeleton() {
   return (
-    <Card className="w-full max-w-lg mx-auto">
+    <Card className="w-full max-w-lg mx-auto shadow">
       <CardHeader className="flex flex-col sm:flex-row items-center justify-between space-y-2 sm:space-y-0 pb-6">
         <Skeleton className="h-8 w-3/4 max-w-[200px] bg-gray-300 dark:bg-gray-700" />
         <Skeleton className="h-10 w-10 rounded-full bg-gray-300 dark:bg-gray-700" />
