@@ -84,5 +84,6 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sf-compact), system-ui, sans-serif;
   }
 }
