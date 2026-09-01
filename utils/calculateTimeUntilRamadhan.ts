@@ -5,7 +5,7 @@ export function calcualteTimeUntilRamadhan(currentDate: Date): {
   minutes: number;
   seconds: number;
 } | null {
-  const ramadhanStart = new Date("2026-02-19T04:42:00+07:00");
+  const ramadhanStart = new Date("2027-02-19T04:42:00+07:00");
 
   if (currentDate >= ramadhanStart) {
     return null;
@@ -15,7 +15,7 @@ export function calcualteTimeUntilRamadhan(currentDate: Date): {
 
   const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
   const hours = Math.floor(
-    (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
   );
   const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
