@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 const sfCompact = localFont({
   src: "./fonts/SF-Pro-Text-Regular.otf",
-  variable: "--font-sf-compact",
+  variable: "--font-sf-text",
   display: "swap",
 });
 
