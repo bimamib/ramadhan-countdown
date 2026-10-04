@@ -84,10 +84,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family:
-      var(--font-sf-text),
-      -apple-system,
-      system-ui,
-      sans-serif;
+    font-family: var(--font-sf-text), system-ui, sans-serif;
   }
 }
